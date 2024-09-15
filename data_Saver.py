@@ -2,9 +2,17 @@ import json
 
 
 class DataSaver:
-    def __init__(self, file_name="data.json"):
-        self.__file_name = file_name
+    __file_name = "data.json"
 
-    def save_data(self, data):
-        with open(self.__file_name, "w") as json_file:
-            json.dump(data, json_file, indent=4)
+    @staticmethod
+    def save_data(data):
+        try:
+            with open(DataSaver.__file_name, "r") as json_file:
+                existing_data = json.load(json_file)
+        except FileNotFoundError:
+            existing_data = []
+
+        existing_data.extend(data)
+
+        with open(DataSaver.__file_name, "w") as json_file:
+            json.dump(existing_data, json_file, indent=4)

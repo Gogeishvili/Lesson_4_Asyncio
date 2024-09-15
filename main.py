@@ -1,7 +1,5 @@
 import time
-
 from async_Data_Loader import AsyncDataLoader
-from data_Saver import DataSaver
 
 
 def main():
@@ -9,10 +7,7 @@ def main():
     start_time = time.time()
 
     data_loader = AsyncDataLoader()
-    data_loader.load_data(API, 1, 78)
-
-    data_saver = DataSaver()
-    data_saver.save_data(data_loader.result)
+    data_loader.load_and_save_data(API, 1, 78)
 
     print(time.time() - start_time)
 
