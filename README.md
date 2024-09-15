@@ -1,6 +1,7 @@
 # Async Data Loader and Saver
 
-This Python application demonstrates how to asynchronously load data from an API and save it to a JSON file using `aiohttp` and `asyncio`. The application fetches posts from the API and saves them incrementally to a file.
+This Python application demonstrates how to asynchronously load data from an API and save it to a JSON file using
+`aiohttp` and `asyncio`. The application fetches posts from the API and saves them incrementally to a file.
 
 ## Features
 
